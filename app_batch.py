@@ -28,10 +28,10 @@ if uploaded_file is not None:
     
     if all(col in input_df.columns for col in required_columns):
         # Preprocess the inputs from the file
-        input_df['Resp_Distress'] = input_df['Resp_Distress'].apply(lambda x: 1 if x == 'Yes' else 0)
-        input_df['Septicemia'] = input_df['Septicemia'].apply(lambda x: 1 if x == 'Yes' else 0)
-        input_df['Blood_Transfusion'] = input_df['Blood_Transfusion'].apply(lambda x: 1 if x == 'Yes' else 0)
-        input_df['NVI'] = input_df['NVI'].apply(lambda x: 1 if x == 'Yes' else 0)
+        input_df['Resp_Distress'] = input_df['Resp_Distress'].apply(lambda x: 1 if x == 'Y' else 0)
+        input_df['Septicemia'] = input_df['Septicemia'].apply(lambda x: 1 if x == 'Y' else 0)
+        input_df['Blood_Transfusion'] = input_df['Blood_Transfusion'].apply(lambda x: 1 if x == 'Y' else 0)
+        input_df['NVI'] = input_df['NVI'].apply(lambda x: 1 if x == 'Y' else 0)
         
         # Handle NaN values for zone, stage, and plus
         input_df['NICU_rating'].fillna(1, inplace=True)
